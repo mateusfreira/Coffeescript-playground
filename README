@@ -6,4 +6,3 @@ Intalling
 
 Copiling
 `coffee --join project.js --compile ./*.coffee`
-

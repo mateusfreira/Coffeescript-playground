@@ -1,10 +1,12 @@
 class Any
 	constructor: (@name) ->
-
+	toString : -> "Name: #{@name}"
 class Customer extends Any
 	constructor: (@name,@age) -> 
 		super(@name)
-	toString : -> "Name: #{@name}, Age: #{@age}"
+	toString : -> super+",Age: #{@age}"
  
+show = (any) -> alert any.toString()
+
 mateus = new Customer("Mateus",23)
-alert mateus.toString()
+show(mateus)
