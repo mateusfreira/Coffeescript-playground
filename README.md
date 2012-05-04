@@ -7,3 +7,9 @@ Intalling
 Copiling
 `coffee --join project.js --compile ./*.coffee`
 
+
+Sample SublimeText Build
+https://gist.github.com/2591421
+
+Unit Test Reference
+http://docs.jquery.com/QUnit

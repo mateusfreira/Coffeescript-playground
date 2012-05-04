@@ -14,3 +14,14 @@ gup = ( name ) ->
 	results = regex.exec( window.location.href );
 	if( results?) then decodeURIComponent(results[1]) else "";
 
+
+
+converter = (number,base) ->
+		if(isNaN(number))
+			console.log "Erro numero invalido"
+			return false
+		ret = () ->while(number != 0) 
+				r = number % base
+				number = Math.floor(number / base)
+				r
+		 ret().reverse()

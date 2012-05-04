@@ -9,4 +9,3 @@ $.fn.serializeObject = () ->
 		else
 			o[@name] = @value || '';
 	o
-//

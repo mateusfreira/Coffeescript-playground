@@ -6,7 +6,7 @@ class Customer extends Any
 		super(@name)
 	toString : -> super+",Age: #{@age}"
  
-show = (any) -> alert any.toString()
+show = (any) -> console.log any.toString()
 
 mateus = new Customer("Mateus",23)
 show(mateus)
