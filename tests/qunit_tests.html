@@ -13,7 +13,32 @@
  <h2 id="qunit-userAgent"></h2>
  <ol id="qunit-tests"></ol>
  <div id="qunit-fixture">test markup, will be hidden</div>
+ 
+
  <script type="text/coffeescript">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   $(()->
     module("I`m first Module")
     test("Assert 1 == 1", ()-> ok(1==1, "One expected to equal one"))
@@ -30,7 +55,7 @@
     a = () -> throw new Error("\\o/")
     test("Fisrt teste Error", ()-> raises(a , "must throw error to pass"))
 
-    module("Class Test exception")
+    module("Class Test")
     class Car
       run : ()-> "Runing"
       stop : ()-> "Stoped"
@@ -39,6 +64,25 @@
     test("Assert new car stop equals stoped", ()-> equal(new Car().stop(), "Stoped", "new Car run expected to equal stoped"))
 
   );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
 </script>
 </body>

@@ -25,3 +25,5 @@ converter = (number,base) ->
 				number = Math.floor(number / base)
 				r
 		 ret().reverse()
+
+console.log i for i in [1...10]
