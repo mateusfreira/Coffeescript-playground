@@ -20,7 +20,7 @@ class Operacao
 		linhaQueSai = 0
 		for linha in @r
 			if(i < this.iDeZ())
-				valor = linha[linha.length-1] / linha[coluna]
+				valor = Math.abs(linha[linha.length-1] / linha[coluna])
 				if(menor > valor)
 					menor = valor 
 					linhaQueSai = i
@@ -43,7 +43,7 @@ class Operacao
 		for linha in @r
 			ret = ""
 			for valor in linha
-				ret += "\t#{valor}\t|"
+				ret += "\t#{this.aredonda(valor)}\t|"
 			console.log ret
 	mostraDetalhes:()->
 		console.log "Coluna que Entra"
@@ -117,7 +117,6 @@ class Operacao
 				isai = "x#{i++}"
 			ret += "\t#{isai} = #{valor},\t|"
 		console.log ret
-
 	resolveDeUmaVez:()->
 		i=0
 		while(this.eParaContinuar())
@@ -125,12 +124,11 @@ class Operacao
 			this.resolve()
 			this.mostra()
 			i++
+	
 		#this.mostraExprecaoFinal();
 
 
-
-
-#code				
 o = new Operacao
-o.r = [[5,2,2,1,0,19],[2,1,2,0,1,8],[-7,-3,-2,0,0,0]]
+o.r = [[1,7,3,7,1,0,0,46],[3,-1,1,2,0,1,0,8],[2,3,-1,1,0,0,1,10],[3,6,-2,4,0,0,0,0]]
+o.mostra()
 o.resolveDeUmaVez()
