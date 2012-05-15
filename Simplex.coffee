@@ -95,15 +95,22 @@ class Operacao
 
 	valorFinalX:(i)->
 		valorFinal=0
+		numeroDeDiferentesDe0 = 0
+		ultimoValor = 0
+		linhaDoValorFinal = -1
+
 		j=0
-		for valor in @r[i]
-			if(valor != 0)
-				if(valor==1)
-					valorFinal = @r[i][@r[i].length-1] 
-				else 
-					0
-		  j++
-		valorFinal
+		for linha in @r
+			if(linha[i] != 0)
+				ultimoValor = linha[i]
+				numeroDeDiferentesDe0++
+				linhaDoValorFinal = j
+			j++
+		if(ultimoValor != 1 || numeroDeDiferentesDe0 > 1)
+			return valorFinal
+		else
+			return @r[linhaDoValorFinal][@r[linhaDoValorFinal].length-1]
+
 
 	mostraExprecaoFinal:()->
 		i = 1
@@ -113,10 +120,12 @@ class Operacao
 			if(i==linha.length)
 				continue
 			else
-				valor = this.valorFinalX(i)
-				isai = "x#{i++}"
+				valor = this.valorFinalX(i-1)
+				isai = "x#{i}"
 			ret += "\t#{isai} = #{valor},\t|"
-		console.log ret
+			i++
+		console.log "Valores no Final"+ret
+
 	resolveDeUmaVez:()->
 		i=0
 		while(this.eParaContinuar())
@@ -125,7 +134,7 @@ class Operacao
 			this.mostra()
 			i++
 	
-		#this.mostraExprecaoFinal();
+		this.mostraExprecaoFinal();
 
 
 o = new Operacao
